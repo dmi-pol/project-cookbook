@@ -7,7 +7,7 @@ const  verifyRefreshToken  = require("../middleware/verifyRefreshToken");
 tokensRoute.get("/refresh", verifyRefreshToken, async (req, res) => {
     const user = res.locals.user;
     const { accessToken, refreshToken } = generateTokens({ user });
-    console.log(user, "USERRRRRRRRR")
+    
   
     if (!user) {
       res.clearCookie();
