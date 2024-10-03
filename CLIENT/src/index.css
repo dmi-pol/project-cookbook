@@ -13,6 +13,20 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+img {
+  border-radius: 20px;
+  max-width: 200px;
+}
+
+#recipeCard {
+background-color: #f9f9f9;
+border-radius: 20px;
+}
+
+#min, #serv {
+  color: #1a1a1a;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
