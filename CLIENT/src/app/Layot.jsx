@@ -18,7 +18,7 @@ function Layout({ user, setUser }) {
               <Link to={"/"}>Главная</Link>
             </li>
             <li>
-              <Link to={"/cats"}>кОты</Link>
+              <Link to={"/recipes"}>кОты</Link>
             </li>
             {!user && (
               <>

@@ -13,10 +13,27 @@ import RegistrationPage from "../components/registrationForm";
 import axiosInstance, { SetAccessToken } from "../../axiosInstance";
 import AuthorizationPage from "../components/authorizationForm";
 import RecipesPage from "../Pages/RecipesPage";
+import OneRecipe from "../Pages/OneRecipe";
 
 
 function App() {
   const [user, setUser] = useState(null);
+  const [recipes, setRecipes] = useState([]);
+    
+    async function loadRecipes() {
+        try {
+            const response = await axiosInstance.get('/recipes');
+            if (response.status === 200) {
+                setRecipes(response.data.recipes);
+            }
+        } catch (error) {
+            console.log('Error', error.message);
+        }
+    }
+
+    useEffect(() => {
+        loadRecipes();
+      }, []);
 
    
   const userChecker = async () => {
@@ -46,8 +63,12 @@ function App() {
       element: <Layout user={user} setUser={setUser} />,
       children: [
         {
-          path: "/cats",
+          path: "/recipes",
           element:  <RecipesPage user={user}/>
+        },
+        {
+          path: "/recipes/:id",
+          element:  <OneRecipe recipes={recipes} user={user}/>
         },
         {
           path: "/registration",

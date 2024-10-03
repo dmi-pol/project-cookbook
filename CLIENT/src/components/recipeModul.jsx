@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
 
 function Recipe({ recipe, setRecipes }) {
+
   const [isShow, setIsShow] = useState(false);
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
@@ -36,7 +37,7 @@ function Recipe({ recipe, setRecipes }) {
   }
   return (
     <div id="recipeCard">
-      <Link to={`/cats/${recipe.id}`}>
+      <Link to={`/recipes/${recipe.id}`}>
         <h3>{recipe.title}</h3>
       </Link>
       <img src={recipe.img} alt="" />
