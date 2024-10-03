@@ -40,25 +40,25 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 3,
         recipeId: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        userId: 4,
+        userId: 3,
         recipeId: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        userId: 5,
+        userId: 3,
         recipeId: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        userId: 5,
+        userId: 1,
         recipeId: 10,
         createdAt: new Date(),
         updatedAt: new Date()

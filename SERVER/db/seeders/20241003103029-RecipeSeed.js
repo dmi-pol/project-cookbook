@@ -69,7 +69,7 @@ module.exports = {
         servings: 3,
         readyInMinutes: 30,
         instructions: '1. Замочить рисовую лапшу.\n2. Приготовить соус.\n3. Обжарить лапшу с соусом и добавить яйца и креветки.',
-        userId: 4,
+        userId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -79,7 +79,7 @@ module.exports = {
         servings: 2,
         readyInMinutes: 50,
         instructions: '1. Обжарить лук до золотистого цвета.\n2. Добавить бульон и варить на медленном огне.\n3. Подавать с багетом и сыром.',
-        userId: 4,
+        userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -89,17 +89,17 @@ module.exports = {
         servings: 4,
         readyInMinutes: 45,
         instructions: '1. Приготовить рис для суши.\n2. Выложить на нори с начинкой.\n3. Свернуть и нарезать на кусочки.',
-        userId: 5,
+        userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         title: 'Яблочный пирог',
         img: 'https://souspark.ru/wp-content/uploads/2023/08/Screenshot_17-18.jpg',
-        servings: 6,
+        servings: 4,
         readyInMinutes: 60,
         instructions: '1. Приготовить тесто.\n2. Начинить яблочной начинкой.\n3. Выпекать в духовке до готовности.',
-        userId: 5,
+        userId: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
