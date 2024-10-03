@@ -12,7 +12,7 @@ import Layout from "./Layot";
 import RegistrationPage from "../components/registrationForm";
 import axiosInstance, { SetAccessToken } from "../../axiosInstance";
 import AuthorizationPage from "../components/authorizationForm";
-import CatPage from "../Pages/CatsPage";
+import RecipesPage from "../Pages/RecipesPage";
 
 
 function App() {
@@ -47,7 +47,7 @@ function App() {
       children: [
         {
           path: "/cats",
-          element:  <CatPage user={user}/>
+          element:  <RecipesPage user={user}/>
         },
         {
           path: "/registration",

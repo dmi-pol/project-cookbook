@@ -2,32 +2,32 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
 
-function Post({ cat, setCats }) {
+function Recipe({ recipe, setRecipes }) {
   const [isShow, setIsShow] = useState(false);
   const [name, setName] = useState("");
   const [breed, setBreed] = useState("");
 
   async function deleteHeandler(id) {
-    const response = await axiosInstance.delete(`/cats/${cat.id}`);
+    const response = await axiosInstance.delete(`/recipes/${recipe.id}`);
   
     
     if (response.status === 200) {
-      setCats((prev) => prev.filter((el) => el.id !== id));
+        setRecipes((prev) => prev.filter((el) => el.id !== id));
     }
   }
 
   async function updateHeandler(e) {
     e.preventDefault();
-    const response = await axiosInstance.put(`/cats/${cat.id}`, {
+    const response = await axiosInstance.put(`/cats/${recipe.id}`, {
       name,
       breed,
     });
     console.log(response);
     if (response.status === 200) {
-      setCats((prev) =>
+        setRecipes((prev) =>
         prev.map((el) =>
-          el.id === response.data.cat.id
-            ? response.data.cat
+          el.id === response.data.recipe.id
+            ? response.data.recipe
             : el
         )
       );
@@ -35,12 +35,14 @@ function Post({ cat, setCats }) {
     }
   }
   return (
-    <div>
-      <Link to={`/cats/${cat.id}`}>
-        <h3>{cat.name}</h3>
+    <div id="recipeCard">
+      <Link to={`/cats/${recipe.id}`}>
+        <h3>{recipe.title}</h3>
       </Link>
-      <p>{cat.breed}</p>
-      <button type="button" onClick={() => deleteHeandler(cat.id)}>
+      <img src={recipe.img} alt="" />
+      <p id="serv">🍽 Количесво порций: {recipe.servings}</p>
+      <p id="min">🕗  Время приготовления: {recipe.readyInMinutes}</p>
+      <button type="button" onClick={() => deleteHeandler(recipe.id)}>
         Delete cat
       </button>
       <button type="button" onClick={() => setIsShow((prev) => !prev)}>
@@ -71,4 +73,4 @@ function Post({ cat, setCats }) {
   );
 }
 
-export default Post;
+export default Recipe;
