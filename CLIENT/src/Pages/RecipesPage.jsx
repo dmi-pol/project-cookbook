@@ -23,10 +23,6 @@ function RecipesPage({ user }) {
   }
 
 
- async function addHandler(){
-
- }
-
   async function sortHandler() {
     try {
       setRecipes((prev) =>

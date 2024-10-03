@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
 
+import clockIcon from "../free-icon-clock-3602199.png";
+
+import tar from "../free-icon-plate-6378222.png";
+
 function Recipe({ recipe, setRecipes }) {
 
   const [isShow, setIsShow] = useState(false);
@@ -41,8 +45,8 @@ function Recipe({ recipe, setRecipes }) {
         <h3>{recipe.title}</h3>
       </Link>
       <img src={recipe.img} alt="" />
-      <p id="serv">🍽 Количесво порций: {recipe.servings}</p>
-      <p id="min">🕗  Время приготовления: {recipe.readyInMinutes}</p>
+      <p id="serv"><img id="clockIcon" src={clockIcon}  /> Количесво порций: {recipe.servings}</p>
+      <p id="min"><img id='dish'src={tar}  />  Время приготовления: {recipe.readyInMinutes}</p>
       <button type="button" onClick={() => deleteHeandler(recipe.id)}>
         Delete cat
       </button>

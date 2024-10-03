@@ -1,24 +1,29 @@
+// Layout.js
+
 import { Link, Outlet } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
 
 function Layout({ user, setUser }) {
   async function logoutHandler() {
-
     const response = await axiosInstance.delete("users/logout");
     if (response.status === 200) {
       setUser(null);
     }
   }
+
   return (
     <>
-      <nav>
-        <div id="navig">
-          <ul style={{ display: "flex", gap: "20px", listStyle: "none" }}>
+      <header className="header">
+        <div className="header__logo">
+          <h1 id="Delicios"> Delicious club</h1>
+        </div>
+        <nav className="header__nav">
+          <ul className="header__nav-list">
             <li>
               <Link to={"/"}>Главная</Link>
             </li>
             <li>
-              <Link to={"/recipes"}>кОты</Link>
+              <Link to={"/recipes"}>Коты</Link>
             </li>
             {!user && (
               <>
@@ -30,23 +35,22 @@ function Layout({ user, setUser }) {
                 </li>
               </>
             )}
-
             <li id="user">
               {user && (
                 <>
                   {"Привет, " + user.name}
-                  <button type="button" onClick={logoutHandler}>
+                  <button id="exit"type="button" onClick={logoutHandler}>
                     Выйти
                   </button>
                 </>
               )}
             </li>
           </ul>
-        </div>
-      </nav>
-      <div>
-        <Outlet />
-      </div>
+        </nav>
+      </header>
+      <main>
+        <Outlet /> {/* Основной контент будет отображаться здесь */}
+      </main>
     </>
   );
 }
