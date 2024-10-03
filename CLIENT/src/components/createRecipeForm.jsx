@@ -8,6 +8,7 @@ function RecipesForm({ setRecipes, user }) {
   const [servings, setServings] = useState("");
   const [readyInMinutes, setReadyInMinutes] = useState("");
   const [instructions, setInstructions] = useState("");
+  const [isShow, setIsShow] = useState(false);
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -34,6 +35,14 @@ function RecipesForm({ setRecipes, user }) {
   };
 
   return (
+    <>
+    <button type="button" onClick={() => setIsShow((prev) => !prev)}>
+        Update cat
+      </button>
+
+
+      
+    {isShow &&
     <form onSubmit={submitHandler}>
       <label>
         Название рецепта
@@ -84,9 +93,9 @@ function RecipesForm({ setRecipes, user }) {
           placeholder="Инструкция"
         />
       </label>
-      <button type="submit">Добавить рецепт</button>
-    </form>
-  );
+      <button type="submit">Добавь</button>
+    </form>}
+    </>);
 }
 
 export default RecipesForm;
