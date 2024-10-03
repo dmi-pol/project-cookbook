@@ -1,3 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Dela+Gothic+One:regular);
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
+.header {
+  position: fixed; /* Фиксируем хедер */
+  top: 0; /* Прикрепляем к верхней части страницы */
+  left: 0; /* Прикрепляем к левой части страницы */
+  width: 100%; /* Хедер занимает всю ширину */
+  background: linear-gradient(
+    115deg,
+    rgba(70, 207, 13, 1) 30%,
+    rgba(124, 255, 1, 1) 45%,
+    rgba(242, 255, 0, 1) 55%,
+    rgba(124, 255, 1, 1) 70%,
+    rgba(70, 207, 13, 1) 85%
+  ); /* Обновленный градиент с мягкими переходами */
+  background-size: 200% 200%; /* Увеличиваем размер фона для плавного движения */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 1000; /* Устанавливаем высокий z-index, чтобы хедер был выше остальных элементов */
+  animation: metallicShine 10s ease-in-out infinite; /* Применяем анимацию к фону */
+}
+
+@keyframes metallicShine {
+  0% {
+    background-position: -200% 0%; /* Начальная позиция фона за пределами элемента */
+  }
+  50% {
+    background-position: 200% 0%; /* Проход фона через элемент */
+  }
+  100% {
+    background-position: -200% 0%; /* Возврат в исходное положение */
+  }
+}
+
+.header__logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__nav-list {
+  list-style: none; /* Убираем маркеры списка */
+align-items: center;
+display: flex;
+  margin: 0;
+  padding: 0;
+  margin-right: 45px;
+  column-gap: 20px;
+  background: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+}
+
+#exit {
+  border-radius: 20px;
+  
+}
+
+.header__nav-item {
+  margin-left: 20px; /* Расстояние между пунктами меню */
+  color: #1a1a1a;
+}
+
+.header__nav-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.header__nav-item a:hover {
+  color: #3498db; /* Цвет при наведении */
+}
+
+#user {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Расстояние между текстом и кнопкой */
+}
+
+button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  background: white;
+  color: #333;
+}
+
+/* Добавим отступ для основного содержимого, чтобы оно не перекрывало хедер */
+main {
+  margin-top: 80px; /* Отступ сверху для компенсации высоты фиксированного хедера */
+}
+
+
+#Delicios {
+  background: black;
+  padding: 6px;
+  border-radius: 20px;
+  padding-left: 15px ;
+  padding-right: 15px ;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,11 +132,45 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-img {
-  border-radius: 20px;
-  max-width: 200px;
+li {
+  color: black;
+  display: flex;
+ font-family: Dela Gothic One; 
+ align-items: center;
 }
 
+#recipesMainPage {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Перенос элементов на новую строку */
+            gap: 10px; 
+}
+
+/* */
+
+#clockIcon {
+  
+  width: 20px;
+  height: 20px;
+}
+
+#dish {
+  width: 20px;
+  height: 20px;
+}
+
+img {
+  border-radius: 20px;
+ 
+  width: 200px; /* Фиксированная ширина */
+  height: 200px; /* Фиксированная высота */
+  object-fit: cover;
+}
+
+#header {
+  border: 2px solid #ff0000;
+  height: 30px;
+}
 #recipeCard {
 background-color: #f9f9f9;
 border-radius: 20px;
@@ -29,8 +182,10 @@ border-radius: 20px;
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #000000;
   text-decoration: inherit;
+  
+  
 }
 a:hover {
   color: #535bf2;

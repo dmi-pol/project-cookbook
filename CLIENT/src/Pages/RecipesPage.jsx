@@ -26,7 +26,7 @@ function RecipesPage({user}) {
       return (
 
 
-        <div>
+        <div id='recipesMainPage'>
           {/* <CatForm user={user} setRecipes={setRecipes} /> */}
 
           {
