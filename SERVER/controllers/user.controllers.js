@@ -39,13 +39,13 @@ async function registrationUSerController(req, res) {
       res.status(400).json({ message: "Empty fields" });
     } else {
       const hashedPassword = await bcrypt.hash(password, 10);
-    //   console.log(hashedPassword)
+    
       const newUser = await UserService.createUser({
         name,
         email,
         password: hashedPassword,
       });
-    //   console.log(newUser.get())
+    
    
       const tmpUser = newUser.get();
       delete tmpUser.password;
