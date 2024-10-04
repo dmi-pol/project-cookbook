@@ -23,6 +23,7 @@ function RegPage({ setUser }) {
         email,
         password,
       });
+      console.log(response, "====")
       if (response.status === 201) {
         setUser(response.data.user);
         SetAccessToken(response.data.accessToken);
