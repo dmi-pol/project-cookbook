@@ -2,16 +2,24 @@
 
 import { Link, Outlet } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
+import { useEffect, useState } from "react";
 
 function Layout({ user, setUser }) {
+  const [loading, setLoading] = useState(true);
 
-  
   async function logoutHandler() {
     const response = await axiosInstance.delete("users/logout");
     if (response.status === 200) {
       setUser(null);
     }
   }
+
+  useEffect(() => {
+    // Эмулируем ожидание данных
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  });
 
   return (
     <>
@@ -25,7 +33,7 @@ function Layout({ user, setUser }) {
           <ul className="header__nav-list">
             <li className="header__nav-item "> 
               <Link to={"/"}>Главная</Link>
-            </li >
+            </li>
             <li className="header__nav-item ">
               <Link to={"/recipes"}>Рецепты</Link>
             </li>
@@ -52,9 +60,18 @@ function Layout({ user, setUser }) {
           </ul>
         </nav>
       </header>
-      <main>
+      {
+        loading ? (
+        <div className="loader"></div>
+      ) : (
+        <div className="content">
+        <main>
         <Outlet /> {/* Основной контент будет отображаться здесь */}
       </main>
+        </div>
+      )
+      }
+      
     </>
   );
 }
