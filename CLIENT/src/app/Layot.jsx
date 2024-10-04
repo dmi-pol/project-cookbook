@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 function Layout({ user, setUser }) {
   const [loading, setLoading] = useState(true);
+  console.log(user)
 
   async function logoutHandler() {
     const response = await axiosInstance.delete("users/logout");

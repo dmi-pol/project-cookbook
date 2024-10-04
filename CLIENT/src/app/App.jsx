@@ -13,6 +13,7 @@ import AuthorizationPage from "../components/authorizationForm";
 import RecipesPage from "../Pages/RecipesPage";
 import OneRecipe from "../Pages/OneRecipe";
 import NotFound from "../Pages/NotFound";
+import HomePage from "../Pages/homePage";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -59,6 +60,10 @@ function App() {
       element: <Layout user={user} setUser={setUser} />,
       errorElement: <NotFound />,
       children: [
+        {
+          path: "/",
+          element: <HomePage />,
+        },
         {
           path: "/recipes",
           element: <RecipesPage user={user} />,
