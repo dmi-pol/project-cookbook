@@ -11,6 +11,9 @@ function AuthorizationPage({ setUser }) {
 
     async function onSubmitHandler(e) {
         e.preventDefault();
+        if (!email.trim() || !password.trim()) {
+            alert("Заполните все поля!")
+        }
         const response = await axiosInstance.post("/users/authorization", { email, password })
         if(response.status === 201){
             setUser(response.data.user)

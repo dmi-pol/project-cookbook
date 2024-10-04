@@ -14,6 +14,9 @@ function RegPage({ setUser }) {
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
+    if (!email.trim() || !name.trim() || !password.trim()){
+      alert("Заполните все поля!")
+    }
     if (password !== rpassword) {
       setErrorMessage("Пароли не совпадают");
       setShowError(true);

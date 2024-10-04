@@ -39,6 +39,7 @@ function RecipesForm({recipes, setRecipes, user }) {
       setServings("");
       setReadyInMinutes("");
       setInstructions("");
+      setIsShow((prev) => !prev)
       console.log(recipes)
     } catch (error) {
       console.error("Ошибка при отправке формы", error);
@@ -58,7 +59,7 @@ function RecipesForm({recipes, setRecipes, user }) {
     {isShow &&
     <form id="form" onSubmit={submitHandler}>
       <label>
-        Название рецепта
+        Название рецепта:
         <input
           type="text"
           value={title}
@@ -68,7 +69,7 @@ function RecipesForm({recipes, setRecipes, user }) {
       </label>
       <br />
       <label>
-        Картинка блюда
+        Картинка блюда:
         <input
           type="text"
           value={img}
@@ -78,7 +79,7 @@ function RecipesForm({recipes, setRecipes, user }) {
       </label>
       <br />
       <label>
-        Количество порций
+        Количество порций:
         <input
           type="text"
           value={servings}
@@ -88,7 +89,7 @@ function RecipesForm({recipes, setRecipes, user }) {
       </label>
       <br />
       <label>
-        Время готовки в минутах
+        Время готовки:
         <input
           type="text"
           value={readyInMinutes}
@@ -98,15 +99,15 @@ function RecipesForm({recipes, setRecipes, user }) {
       </label>
       <br />
       <label>
-        Инструкция по приготовлению
-        <input
+        Инструкция:
+        <input id="description"
           type="text"
           value={instructions}
           onChange={(e) => setInstructions(e.target.value)}
           placeholder="Инструкция"
         />
       </label>
-      <button type="submit">Добавь</button>
+      <button id="submit" type="submit">ДОБАВИТЬ</button>
     </form>}
     </>);
 }
