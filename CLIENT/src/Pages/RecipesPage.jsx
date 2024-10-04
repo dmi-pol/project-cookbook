@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import axiosInstance from "../../axiosInstance";
 
-import CatForm from "../components/createCatForm";
+
 import Recipe from "../components/recipeModul";
 import RecipesForm from "../components/createRecipeForm";
 
@@ -11,6 +11,7 @@ function RecipesPage({ user }) {
  
   const [recipes, setRecipes] = useState([]);
   const [isSorted, setIsSorted] = useState(false);
+  const [sortButton, setSortButton] = useState("ВРЕМЯ ПРИГОТОВЛЕНИЯ ⬆");
   
   
 
@@ -19,7 +20,7 @@ function RecipesPage({ user }) {
       const response = await axiosInstance.get("/recipes");
       if (response.status === 200) {
         
-        setRecipes(response.data.recipes);
+        setRecipes(response.data.recipes.sort((a, b) => a.readyInMinutes - b.readyInMinutes));
       }
     } catch (error) {
       console.log("Error", error.message);
@@ -33,11 +34,13 @@ function RecipesPage({ user }) {
         prev.sort((a, b) => b.readyInMinutes - a.readyInMinutes)
       );
       setIsSorted(true);
+      setSortButton("ВРЕМЯ ПРИГОТОВЛЕНИЯ ⬇");
       if (isSorted) {
         setRecipes((prev) =>
           prev.sort((a, b) => a.readyInMinutes - b.readyInMinutes)
         );
         setIsSorted(false);
+        setSortButton("ВРЕМЯ ПРИГОТОВЛЕНИЯ ⬆");
       }
     } catch (error) {
       console.log(error.message);
@@ -51,9 +54,9 @@ function RecipesPage({ user }) {
   return (
     <div>
     <div id="buttonsMainPage">
-      <RecipesForm recipes={recipes} user={user} setRecipes={setRecipes}/>
+      <RecipesForm recipes user={user} setRecipes={setRecipes}/>
       <button id="sortButton" type="submit" onClick={sortHandler}>
-        ВРЕМЯ ПРИГОТОВЛЕНИЯ ⬆
+        {sortButton}
       </button>
       </div>
       <div id="recipesMainPage">
