@@ -50,7 +50,7 @@ function RecipesPage({ user }) {
       <button type="submit" onClick={sortHandler}>
         Сортируй по времени
       </button>
-      <div>
+      <div id="recipesMainPage">
         {recipes.map((recipe) => (
           <Recipe recipe={recipe} setRecipes={setRecipes} key={recipe.id} />
         ))}
