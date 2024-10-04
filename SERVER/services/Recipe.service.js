@@ -20,11 +20,11 @@ class RecipeService {
   static async updateRecipe(id, data, userId) {
     try {
       const recipe = await Recipe.findOne({ where: { id, userId } });
-
+console.log(recipe)
       if (recipe) {
         return await recipe.update(data);
       } else {
-        return { message: "Cat not found" };
+        return { message: "Recipe not found" };
       }
     } catch (error) {
       console.log(error);

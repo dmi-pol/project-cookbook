@@ -32,11 +32,14 @@ async function updateRecipeController(req, res) {
   const { id } = req.params;
   const { user } = res.locals;
   const {title, img, servings, readyInMinutes, instructions} = req.body
+
+ 
   
   
   try {
     const recipe = await RecipeService.updateRecipe(id, {title, img, servings, readyInMinutes, instructions}, user.id);
-   
+ 
+   console.log(recipe)
     if (recipe) {
       res.status(200).json({recipe});
     } else {

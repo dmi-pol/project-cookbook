@@ -16,6 +16,7 @@ import OneRecipe from "../Pages/OneRecipe";
 function App() {
   const [user, setUser] = useState(null);
   const [recipes, setRecipes] = useState([]);
+  const [theme, setTheme] = useState('light');
 
   async function loadRecipes() {
     try {
@@ -28,6 +29,7 @@ function App() {
     }
   }
 
+ 
   useEffect(() => {
     loadRecipes();
   }, []);
@@ -61,7 +63,7 @@ function App() {
         },
         {
           path: "/recipes/:id",
-          element: <OneRecipe recipes={recipes} user={user} />,
+          element: <OneRecipe recipes={recipes} setRecipes={setRecipes} user={user} />,
         },
         {
           path: "/registration",

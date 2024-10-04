@@ -46,13 +46,15 @@ function RecipesPage({ user }) {
 
   return (
     <div>
+    <div id="buttonsMainPage">
       <RecipesForm />
-      <button type="submit" onClick={sortHandler}>
-        Сортируй по времени
+      <button id="sortButton" type="submit" onClick={sortHandler}>
+        ВРЕМЯ ПРИГОТОВЛЕНИЯ ⬆
       </button>
+      </div>
       <div id="recipesMainPage">
         {recipes.map((recipe) => (
-          <Recipe recipe={recipe} setRecipes={setRecipes} key={recipe.id} />
+          <Recipe recipe={recipe} user={user} setRecipes={setRecipes} key={recipe.id} />
         ))}
       </div>
     </div>

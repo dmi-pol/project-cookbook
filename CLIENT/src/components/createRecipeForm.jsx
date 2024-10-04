@@ -10,10 +10,12 @@ function RecipesForm({ setRecipes, user }) {
   const [instructions, setInstructions] = useState("");
   const [isShow, setIsShow] = useState(false);
 
+
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axiosInstance.post("/recipes", {
+      const { data } = await axiosInstance.post("/recipes/:id", {
         title,
         img,
         servings,
@@ -36,14 +38,14 @@ function RecipesForm({ setRecipes, user }) {
 
   return (
     <>
-    <button type="button" onClick={() => setIsShow((prev) => !prev)}>
-        Update cat
+    <button id="sortButton" type="button" onClick={() => setIsShow((prev) => !prev)} >
+        ДОБАВИТЬ РЕЦЕПТ +
       </button>
 
 
       
     {isShow &&
-    <form onSubmit={submitHandler}>
+    <form id="form" onSubmit={submitHandler}>
       <label>
         Название рецепта
         <input

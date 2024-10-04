@@ -8,11 +8,11 @@
   width: 100%; /* Хедер занимает всю ширину */
   background: linear-gradient(
     115deg,
-    rgba(70, 207, 13, 1) 30%,
-    rgba(124, 255, 1, 1) 45%,
-    rgba(242, 255, 0, 1) 55%,
-    rgba(124, 255, 1, 1) 70%,
-    rgba(70, 207, 13, 1) 85%
+      rgba(153, 102, 255, 1) 30%, /* Фиолетовый оттенок */
+    rgba(204, 153, 255, 1) 45%, /* Светло-фиолетовый */
+    rgba(153, 51, 255, 1) 55%, /* Глубокий фиолетовый */
+    rgba(204, 153, 255, 1) 70%, /* Светло-фиолетовый */
+    rgba(153, 102, 255, 1) 85% /* Фиолетовый оттенок */
   ); /* Обновленный градиент с мягкими переходами */
   background-size: 200% 200%; /* Увеличиваем размер фона для плавного движения */
   padding: 20px;
@@ -130,11 +130,37 @@ main {
   -moz-osx-font-smoothing: grayscale;
 }
 
+#sortButton {
+  height: 40px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#sortButton:hover {
+  transform: scale(1.1); /* Увеличиваем кнопку на 10% */
+   /* Меняем цвет фона при наведении (опционально) */
+}
+
 li {
   color: black;
   display: flex;
   font-family: Dela Gothic One;
   align-items: center;
+}
+
+#buttonsMainPage {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center; 
+ 
+  min-width: 600px; /* Минимальная ширина */
+  
+  transition: width 0.5s ease; /* Плавный переход изменения ширины */
+ 
 }
 
 #recipesMainPage {
@@ -176,6 +202,17 @@ img {
 #min,
 #serv {
   color: #1a1a1a;
+}
+
+#form {
+  width: 400px; /* Устанавливаем фиксированную ширину формы */
+  margin: 20px auto; /* Центрируем форму */
+  padding: 20px;
+  background-color: #ffffff; /* Светлый фон для формы */
+  border-radius: 15px; /* Скругленные углы */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Тень для объема */
+  border: 5px solid #535bf2; /* Легкая граница */
+  color: #000000;
 }
 
 a {
