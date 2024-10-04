@@ -5,7 +5,8 @@ function NotFound() {
   return (
     <>
     <Layout />
-    <h1>Error 404</h1><div>NotFound</div>
+    <h1>Error 404</h1>
+    <div>Not Found</div>
     </>
   )
 }
