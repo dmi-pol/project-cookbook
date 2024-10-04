@@ -12,6 +12,7 @@ import axiosInstance, { SetAccessToken } from "../../axiosInstance";
 import AuthorizationPage from "../components/authorizationForm";
 import RecipesPage from "../Pages/RecipesPage";
 import OneRecipe from "../Pages/OneRecipe";
+import NotFound from "../Pages/NotFound";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -56,6 +57,7 @@ function App() {
     {
       path: "/",
       element: <Layout user={user} setUser={setUser} />,
+      errorElement: <NotFound />,
       children: [
         {
           path: "/recipes",
