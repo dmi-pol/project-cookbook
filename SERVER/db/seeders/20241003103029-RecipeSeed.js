@@ -95,7 +95,7 @@ module.exports = {
         },
         {
           title: "Суши ролл",
-          img: "https://images.gastronom.ru/ZGaxEdY7-giFn-qgOzXRUlod3ym0UfkG686cMEqwAsM/pr:recipe-cover-image/g:ce/rs:auto:0:0:0/L2Ntcy9hbGwtaW1hZ2VzLzExNDUzODdjLWY3OGEtNGVjYy1hYjcyLTMwMWEzNGU1OGNmMC5qcGc.webp",
+          img: "https://arigator.ru/upload/iblock/c25/c25af0bd9e8da1621ca26505378bd8fb.jpg",
           servings: 4,
           readyInMinutes: 45,
           instructions:

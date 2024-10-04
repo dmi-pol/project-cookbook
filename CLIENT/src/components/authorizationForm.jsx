@@ -26,7 +26,7 @@ function AuthorizationPage({ setUser }) {
 
     return (
         <div>
-        <form className="reg-form" onSubmit={onSubmitHandler}>
+        <form className="form" onSubmit={onSubmitHandler}>
             <label>Email
                 <input
                 type="email"

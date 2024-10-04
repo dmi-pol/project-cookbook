@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axiosInstance, { SetAccessToken } from "../../axiosInstance";
+import { useNavigate } from "react-router-dom";
  
 
 function RegPage({ setUser }) {
@@ -11,6 +12,7 @@ function RegPage({ setUser }) {
   const [showError, setShowError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [name, setName] = useState("");
+  const navigate = useNavigate();
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -31,6 +33,7 @@ function RegPage({ setUser }) {
       if (response.status === 201) {
         setUser(response.data.user);
         SetAccessToken(response.data.accessToken);
+        navigate('/');
       } else {
         setErrorMessage("Нету пользователя =(");
       }
@@ -39,7 +42,7 @@ function RegPage({ setUser }) {
 
   return (
     <div>
-      <form className="reg-form" onSubmit={onSubmitHandler}>
+      <form className="form" onSubmit={onSubmitHandler}>
       <label>
           <p>Имя</p>
           <input

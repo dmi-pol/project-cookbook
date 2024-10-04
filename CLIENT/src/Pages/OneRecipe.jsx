@@ -80,7 +80,7 @@ function OneRecipe({ recipes, setRecipes, user }) {
       <p id='desc'>Описание: {oneRec.instructions}</p>
 
 
-      {/* {(user.id === oneRec.userId) && (
+      {user.id === oneRec.userId && (
         <>
           <button type='button' onClick={() => deleteHandler(oneRec.id)}>
             УДАЛИТЬ
@@ -89,9 +89,9 @@ function OneRecipe({ recipes, setRecipes, user }) {
             РЕДАКТИРОВАТЬ
           </button>
         </>
-      )}  */}
+      )} 
 
-      {/* Форма редактирования рецепта */}
+
       {isShow && (
         <form onSubmit={updateHandler}>
           <label>
