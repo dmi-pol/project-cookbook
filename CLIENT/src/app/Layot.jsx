@@ -1,4 +1,4 @@
-// Layout.js
+
 
 import { Link, Outlet } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
@@ -17,27 +17,29 @@ function Layout({ user, setUser }) {
     <>
       <header className="header">
         <div className="header__logo">
+        <Link to={`/`}>
           <h1 id="Delicios"> Delicious club</h1>
+          </Link>
         </div>
         <nav className="header__nav">
           <ul className="header__nav-list">
-            <li>
+            <li className="header__nav-item "> 
               <Link to={"/"}>Главная</Link>
-            </li>
-            <li>
+            </li >
+            <li className="header__nav-item ">
               <Link to={"/recipes"}>Рецепты</Link>
             </li>
             {!user && (
               <>
-                <li>
+                <li className="header__nav-item ">
                   <Link to={"/authorization"}>Авторизация</Link>
                 </li>
-                <li>
+                <li className="header__nav-item ">
                   <Link to={"/registration"}>Регистрация</Link>
                 </li>
               </>
             )}
-            <li id="user">
+            <li id="user" >
               {user && (
                 <>
                   {"Привет, " + user.name}

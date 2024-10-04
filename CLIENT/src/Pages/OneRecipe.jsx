@@ -4,7 +4,7 @@ import axiosInstance from '../../axiosInstance';
 
 
 function OneRecipe({recipes, setRecipes, user}) {
-    const { id } = useParams();
+
 
     const [isShow, setIsShow] = useState(false);
     const [img, setImage] = useState("")
@@ -14,21 +14,23 @@ function OneRecipe({recipes, setRecipes, user}) {
     const [title, setTitle] = useState("");
     const [oneRec, setOneRec] = useState({});
     const navigate = useNavigate();
-  
 
-    useEffect(() => {
-      const selectedRecipe = recipes.find((el) => el.id === Number(id));
-      console.log(selectedRecipe)
-      if (selectedRecipe) {
-        setOneRec(selectedRecipe);
-        // Устанавливаем значения для полей формы при редактировании
-        setTitle(selectedRecipe.title);
-        setImage(selectedRecipe.img);
-        setServings(selectedRecipe.servings);
-        setReadyInMinutes(selectedRecipe.readyInMinutes);
-        setInstructions(selectedRecipe.instructions);
-      }
-    }, [id, recipes]);
+    const { id } = useParams();
+   
+  
+async function  loadOneRecipe(id) {
+ console.log(id)
+  try {
+    const response = await axiosInstance.get(`/recipes/${id}`);
+    setOneRec(response.data.recipe);
+  } catch (error) {
+    console.log("Error", error.message);
+  }
+}
+
+useEffect(() => {
+  loadOneRecipe(id);
+}, []);
 
   async function deleteHeandler(id) {
     const response = await axiosInstance.delete(`/recipes/${id}`);
