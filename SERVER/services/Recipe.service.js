@@ -9,6 +9,15 @@ class RecipeService {
     }
   }
 
+  static async getOneRecipe(id) {
+    try {
+      return await Recipe.findOne({ where: { id } });
+    } catch (error) {
+      console.log(error)
+      return error
+    }
+  }
+
   static async createRecipe(data) {
     try {
       return Recipe.create(data);

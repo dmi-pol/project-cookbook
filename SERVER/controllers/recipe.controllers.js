@@ -10,6 +10,17 @@ async function getRecipesController(req, res) {
   }
 }
 
+async function getOneRecipeController(req, res) {
+  const { id } = req.params;
+  console.log(id, "idddddd")
+  try {
+    const recipe = await RecipeService.getOneRecipe(id);
+    res.status(200).json({ recipe });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+}
+
 async function deleteRecipeController(req, res) {
   const { id } = req.params;
   const user = res.locals.user;
@@ -68,5 +79,6 @@ module.exports = {
   getRecipesController,
   deleteRecipeController,
   updateRecipeController,
-  createRecipeController
+  createRecipeController,
+  getOneRecipeController
 };

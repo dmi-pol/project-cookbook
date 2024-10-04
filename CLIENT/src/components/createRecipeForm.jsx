@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axiosInstance from "../../axiosInstance";
 
-function RecipesForm({ setRecipes, user }) {
+function RecipesForm({recipes, setRecipes, user }) {
 
   const [title, setTitle] = useState("");
   const [img, setImage] = useState("")
@@ -12,6 +12,9 @@ function RecipesForm({ setRecipes, user }) {
 
 
 
+ 
+
+ 
 
 
   const submitHandler = async (e) => {
@@ -26,17 +29,23 @@ function RecipesForm({ setRecipes, user }) {
         userId: user.id,
       });
 
+      if(data){
+        console.log(data)
+      }
+
       setRecipes((prev) => [...prev, data.newRecipe]);
       setTitle("");
       setImage("");
       setServings("");
       setReadyInMinutes("");
       setInstructions("");
-
+      console.log(recipes)
     } catch (error) {
       console.error("Ошибка при отправке формы", error);
     }
   };
+
+
 
   return (
     <>

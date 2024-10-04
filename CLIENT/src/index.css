@@ -68,18 +68,26 @@
 .header__nav-item {
   margin-left: 20px; /* Расстояние между пунктами меню */
   color: #1a1a1a;
+  
+}
+
+#serv {
+  font-weight: bold;
 }
 
 .header__nav-item a {
-  color: white;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.3s;
+  transition: transform 0.3s ease, color 0.3s ease; /* Добавляем трансформацию и цвет */
+  cursor: pointer;
 }
 
 .header__nav-item a:hover {
-  color: #3498db; /* Цвет при наведении */
+  color:rgb(153, 51, 255);
+  transform: scale(1.1); 
 }
+
 
 #user {
   color: black;
@@ -108,11 +116,16 @@ main {
 }
 
 #Delicios {
-  background: black;
+  background: rgb(0, 0, 0);
   padding: 6px;
   border-radius: 20px;
   padding-left: 15px;
   padding-right: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#Delicios:hover {
+  transform: scale(1.1); /* Правильный селектор с совпадающим ID */
 }
 
 :root {
@@ -135,6 +148,9 @@ main {
   margin: 10px;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: white;
+  color: black;
+  font-weight: bold;
 }
 
 #sortButton:hover {
@@ -151,11 +167,11 @@ li {
 
 #buttonsMainPage {
   display: flex;
-  background-color: #ffffff;
+ 
   border-radius: 20px;
   margin-bottom: 20px;
   align-items: center;
-  justify-content: center; 
+  justify-content:right; 
  
   min-width: 600px; /* Минимальная ширина */
   
@@ -168,6 +184,7 @@ li {
   align-items: center;
   flex-wrap: wrap; /* Перенос элементов на новую строку */
   gap: 10px;
+  justify-content: center;
 }
 
 /* */
@@ -195,8 +212,16 @@ img {
   height: 30px;
 }
 #recipeCard {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   border-radius: 20px;
+  width: 260px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#recipeCard:hover {
+  transform: scale(1.09);
 }
 
 #min,
@@ -217,12 +242,12 @@ img {
 
 a {
   font-weight: 500;
-  color: #000000;
+  color: #ffffff;
   text-decoration: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
-a:hover {
-  color: #535bf2;
-}
+
 
 body {
   margin: 0;

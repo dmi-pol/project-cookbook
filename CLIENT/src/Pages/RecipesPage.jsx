@@ -51,7 +51,7 @@ function RecipesPage({ user }) {
   return (
     <div>
     <div id="buttonsMainPage">
-      <RecipesForm user={user} setRecipes={setRecipes}/>
+      <RecipesForm recipes={recipes} user={user} setRecipes={setRecipes}/>
       <button id="sortButton" type="submit" onClick={sortHandler}>
         ВРЕМЯ ПРИГОТОВЛЕНИЯ ⬆
       </button>
