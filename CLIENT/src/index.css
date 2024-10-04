@@ -1,0 +1,412 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Dela+Gothic+One:regular);
+@import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
+.header {
+  position: fixed; /* Фиксируем хедер */
+  top: 0; /* Прикрепляем к верхней части страницы */
+  left: 0; /* Прикрепляем к левой части страницы */
+  width: 100%; /* Хедер занимает всю ширину */
+  background: linear-gradient(
+    115deg,
+      rgba(153, 102, 255, 1) 30%, /* Фиолетовый оттенок */
+    rgba(204, 153, 255, 1) 45%, /* Светло-фиолетовый */
+    rgba(153, 51, 255, 1) 55%, /* Глубокий фиолетовый */
+    rgba(204, 153, 255, 1) 70%, /* Светло-фиолетовый */
+    rgba(153, 102, 255, 1) 85% /* Фиолетовый оттенок */
+  ); /* Обновленный градиент с мягкими переходами */
+  background-size: 200% 200%; /* Увеличиваем размер фона для плавного движения */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  z-index: 1000; /* Устанавливаем высокий z-index, чтобы хедер был выше остальных элементов */
+  animation: metallicShine 10s ease-in-out infinite; /* Применяем анимацию к фону */
+}
+
+@keyframes metallicShine {
+  0% {
+    background-position: -200% 0%; /* Начальная позиция фона за пределами элемента */
+  }
+  50% {
+    background-position: 200% 0%; /* Проход фона через элемент */
+  }
+  100% {
+    background-position: -200% 0%; /* Возврат в исходное положение */
+  }
+}
+
+.header__logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__nav-list {
+  list-style: none; /* Убираем маркеры списка */
+  align-items: center;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-right: 45px;
+  column-gap: 20px;
+  background: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+}
+
+#exit {
+  border-radius: 20px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Добавляем трансформацию и цвет */
+  cursor: pointer;
+
+}
+
+.header__nav-item {
+  margin-left: 20px; /* Расстояние между пунктами меню */
+  color: #1a1a1a;
+  
+}
+#mainPage {
+  width: 500px;
+  height: 500px;
+}
+
+#serv {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  
+  
+}
+
+#mainP{
+  font-family: Dela Gothic One;
+  font-size: 30px;
+}
+
+#mainP {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+/* Анимация увеличения (приближения) изображения */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1); /* Начальный размер изображения */
+  }
+  50% {
+    transform: scale(1.1); /* Увеличение изображения до 110% */
+  }
+  100% {
+    transform: scale(1); /* Возврат к исходному размеру */
+  }
+}
+
+/* Применяем анимацию к изображению */
+.zoom-animation {
+  animation: zoomInOut 5s ease-in-out infinite; /* Длительность 5 секунд, плавная анимация, зацикленная */
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  border-radius: 10px;
+
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#exit:hover {
+background: black;
+color:rgb(153, 51, 255);
+transform: scale(1.1); 
+}
+
+.header__nav-item a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 16px;
+  transition: transform 0.3s ease, color 0.3s ease; /* Добавляем трансформацию и цвет */
+  cursor: pointer;
+}
+
+.header__nav-item a:hover {
+  color:rgb(153, 51, 255);
+  transform: scale(1.1); 
+}
+
+
+#user {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Расстояние между текстом и кнопкой */
+}
+
+button {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+  background: white;
+  color: #333;
+}
+
+/* Добавим отступ для основного содержимого, чтобы оно не перекрывало хедер */
+main {
+  margin-top: 80px; /* Отступ сверху для компенсации высоты фиксированного хедера */
+}
+
+#Delicios {
+  background: rgb(0, 0, 0);
+  padding: 6px;
+  border-radius: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#Delicios:hover {
+  transform: scale(1.1); /* Правильный селектор с совпадающим ID */
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#sortButton {
+  height: 40px;
+  margin: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+#sortButton:hover {
+  transform: scale(1.1); /* Увеличиваем кнопку на 10% */
+   /* Меняем цвет фона при наведении (опционально) */
+}
+
+li {
+  color: black;
+  display: flex;
+  font-family: Dela Gothic One;
+  align-items: center;
+}
+
+#buttonsMainPage {
+  display: flex;
+ 
+  border-radius: 20px;
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content:right; 
+ 
+  min-width: 600px; /* Минимальная ширина */
+  
+  transition: width 0.5s ease; /* Плавный переход изменения ширины */
+ 
+}
+
+#recipesMainPage {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Перенос элементов на новую строку */
+  gap: 10px;
+  justify-content: center;
+}
+
+/* */
+
+#clockIcon {
+  width: 20px;
+  height: 20px;
+}
+
+#dish {
+  width: 20px;
+  height: 20px;
+}
+
+img {
+  border-radius: 20px;
+
+  width: 250px; /* Фиксированная ширина */
+  height: 250px; /* Фиксированная высота */
+  object-fit: cover;
+}
+
+#header {
+  border: 2px solid #ff0000;
+  height: 30px;
+}
+#recipeCard {
+  background-color: #ffffff;
+  border-radius: 20px;
+  width: 260px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#recipeCard:hover {
+  transform: scale(1.09);
+}
+
+#min,
+#serv {
+  color: #1a1a1a;
+}
+
+input {
+  background: black;
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+  border: 1px solid transparent;
+  width: 160px;
+}
+
+#submit {
+  margin-top: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#submit:hover {
+  margin-top: 20px;
+  transform: scale(1.09);
+  background: black;
+  
+}
+
+.one-recipe {
+  background: white;
+  border-radius: 20px;
+  padding: 10px;
+  color: black;
+  white-space: pre-wrap;
+}
+
+#form {
+  width: 400px; /* Устанавливаем фиксированную ширину формы */
+  margin: 20px auto; /* Центрируем форму */
+  padding: 20px;
+  background-color: #ffffff; /* Светлый фон для формы */
+  border-radius: 15px; /* Скругленные углы */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Тень для объема */
+  color: #000000;
+  font-weight: bold;
+
+}
+
+a {
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+a:hover {
+  color:rgb(153, 51, 255);
+}
+
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* *************  REG  ************* */
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 50px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: #a2c266 10px 10px 10px;
+}
+
+/* *************  Error  ************* */
+.error {
+  padding: 5px;
+  background: #ebadaddc;
+  border: #ff0000 1px solid;
+  border-radius: 10px;
+}
