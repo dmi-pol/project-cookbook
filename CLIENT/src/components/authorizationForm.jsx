@@ -23,7 +23,7 @@ function AuthorizationPage({ setUser }) {
 
     return (
         <div>
-        <form onSubmit={onSubmitHandler}>
+        <form className="reg-form" onSubmit={onSubmitHandler}>
             <label>Email
                 <input
                 type="email"
@@ -31,14 +31,17 @@ function AuthorizationPage({ setUser }) {
                 onChange={(e) => setEmail(e.target.value)}
                 > </input>
             </label>
-            <label>Password
+            <label>Пароль
                 <input
                 type="password"
+                
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 > </input>
+
+                
             </label>
-            <button type="submit">submit</button>
+            <button type="submit">Авторизоваться</button>
         </form>
     </div> 
     )

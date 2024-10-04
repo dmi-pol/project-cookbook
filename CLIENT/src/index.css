@@ -288,3 +288,11 @@ label {
   background: #f9f9f9;
   box-shadow: #a2c266 10px 10px 10px;
 }
+
+/* *************  Error  ************* */
+.error {
+  padding: 5px;
+  background: #ebadaddc;
+  border: #ff0000 1px solid;
+  border-radius: 10px;
+}

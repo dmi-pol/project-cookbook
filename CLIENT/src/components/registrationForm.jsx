@@ -4,6 +4,7 @@ import axiosInstance, { SetAccessToken } from "../../axiosInstance";
  
 
 function RegPage({ setUser }) {
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rpassword, setRpassword] = useState("");
@@ -34,7 +35,7 @@ function RegPage({ setUser }) {
   };
 
   return (
-    <div >
+    <div>
       <form className="reg-form" onSubmit={onSubmitHandler}>
       <label>
           <p>Имя</p>
@@ -72,10 +73,11 @@ function RegPage({ setUser }) {
           ></input>
         </label>
         <button type="submit">Зарегистрироваться</button>
-      </form>
-      {showError && (
-        <div style={{ border: "1px solid red" }}>{errorMessage}</div>
+        {showError && (
+        <div className="error">{errorMessage}</div>
       )}
+      </form>
+      
     </div>
   );
 }

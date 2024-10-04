@@ -4,6 +4,8 @@ import { Link, Outlet } from "react-router-dom";
 import axiosInstance from "../../axiosInstance";
 
 function Layout({ user, setUser }) {
+
+  
   async function logoutHandler() {
     const response = await axiosInstance.delete("users/logout");
     if (response.status === 200) {
