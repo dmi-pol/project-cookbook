@@ -12,10 +12,12 @@ function RecipesForm({ setRecipes, user }) {
 
 
 
+
+
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axiosInstance.post("/recipes/:id", {
+      const { data } = await axiosInstance.post("/recipes", {
         title,
         img,
         servings,
@@ -23,8 +25,8 @@ function RecipesForm({ setRecipes, user }) {
         instructions,
         userId: user.id,
       });
-      
-      setRecipes((prev) => [...prev, data.recipes]);
+
+      setRecipes((prev) => [...prev, data.newRecipe]);
       setTitle("");
       setImage("");
       setServings("");

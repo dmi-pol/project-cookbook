@@ -1,8 +1,7 @@
-
-import React, { useEffect, useState } from 'react'
-
-import { useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import axiosInstance from '../../axiosInstance';
+
 
 function OneRecipe({recipes, setRecipes, user}) {
     const { id } = useParams();
@@ -13,10 +12,13 @@ function OneRecipe({recipes, setRecipes, user}) {
     const [readyInMinutes, setReadyInMinutes] = useState("");
     const [instructions, setInstructions] = useState("");
     const [title, setTitle] = useState("");
-    const [oneRec, setOneRec] = useState([]);
+    const [oneRec, setOneRec] = useState({});
+    const navigate = useNavigate();
+  
 
     useEffect(() => {
       const selectedRecipe = recipes.find((el) => el.id === Number(id));
+      console.log(selectedRecipe)
       if (selectedRecipe) {
         setOneRec(selectedRecipe);
         // Устанавливаем значения для полей формы при редактировании
@@ -29,11 +31,12 @@ function OneRecipe({recipes, setRecipes, user}) {
     }, [id, recipes]);
 
   async function deleteHeandler(id) {
-    const response = await axiosInstance.delete(`/recipes/${oneRec.id}`);
+    const response = await axiosInstance.delete(`/recipes/${id}`);
   
     
     if (response.status === 200) {
         setRecipes((prev) => prev.filter((el) => el.id !== id));
+        navigate("/recipes");
     }
   }
 
