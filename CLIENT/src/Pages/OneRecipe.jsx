@@ -6,6 +6,9 @@ import axiosInstance from '../../axiosInstance';
 function OneRecipe({recipes, setRecipes, user}) {
     const { id } = useParams();
 
+    console.log(1111111111,recipes);
+    console.log(2222222222,id)
+
     const [isShow, setIsShow] = useState(false);
     const [img, setImage] = useState("")
     const [servings, setServings] = useState("");
@@ -15,10 +18,11 @@ function OneRecipe({recipes, setRecipes, user}) {
     const [oneRec, setOneRec] = useState({});
     const navigate = useNavigate();
   
+    const selectedRecipe = recipes.find((el) => el.id === Number(id));
 
+
+    console.log(selectedRecipe);
     useEffect(() => {
-      const selectedRecipe = recipes.find((el) => el.id === Number(id));
-      console.log(selectedRecipe)
       if (selectedRecipe) {
         setOneRec(selectedRecipe);
         // Устанавливаем значения для полей формы при редактировании
