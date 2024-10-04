@@ -71,7 +71,7 @@ function OneRecipe({recipes, setRecipes, user}) {
     <div className='one-recipe'>
 
         <h2 id="title">  Описание: {oneRec.title}</h2>
-         <img src={oneRec.img} alt="" />
+         <img src={oneRec.img} alt="Фото Блюда" />
       <p id="serv">🍽  Количесво порций: {oneRec.servings}</p>
       <p id="min">🕗  Время приготовления: {oneRec.readyInMinutes}</p>
 

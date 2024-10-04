@@ -10,6 +10,7 @@ class UserService {
   }
 
   static async createUser(data) {
+    // console.log(data, "===")
     try {
       return await User.create(data);
     } catch (error) {
