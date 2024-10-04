@@ -47,8 +47,8 @@
 
 .header__nav-list {
   list-style: none; /* Убираем маркеры списка */
-align-items: center;
-display: flex;
+  align-items: center;
+  display: flex;
   margin: 0;
   padding: 0;
   margin-right: 45px;
@@ -63,7 +63,6 @@ display: flex;
 
 #exit {
   border-radius: 20px;
-  
 }
 
 .header__nav-item {
@@ -108,13 +107,12 @@ main {
   margin-top: 80px; /* Отступ сверху для компенсации высоты фиксированного хедера */
 }
 
-
 #Delicios {
   background: black;
   padding: 6px;
   border-radius: 20px;
-  padding-left: 15px ;
-  padding-right: 15px ;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 :root {
@@ -135,21 +133,20 @@ main {
 li {
   color: black;
   display: flex;
- font-family: Dela Gothic One; 
- align-items: center;
+  font-family: Dela Gothic One;
+  align-items: center;
 }
 
 #recipesMainPage {
   display: flex;
   align-items: center;
   flex-wrap: wrap; /* Перенос элементов на новую строку */
-            gap: 10px; 
+  gap: 10px;
 }
 
 /* */
 
 #clockIcon {
-  
   width: 20px;
   height: 20px;
 }
@@ -161,7 +158,7 @@ li {
 
 img {
   border-radius: 20px;
- 
+
   width: 200px; /* Фиксированная ширина */
   height: 200px; /* Фиксированная высота */
   object-fit: cover;
@@ -172,11 +169,12 @@ img {
   height: 30px;
 }
 #recipeCard {
-background-color: #f9f9f9;
-border-radius: 20px;
+  background-color: #f9f9f9;
+  border-radius: 20px;
 }
 
-#min, #serv {
+#min,
+#serv {
   color: #1a1a1a;
 }
 
@@ -184,8 +182,6 @@ a {
   font-weight: 500;
   color: #000000;
   text-decoration: inherit;
-  
-  
 }
 a:hover {
   color: #535bf2;
@@ -234,4 +230,24 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* *************  REG  ************* */
+label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  padding: 50px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: #a2c266 10px 10px 10px;
 }

@@ -33,10 +33,10 @@ function RegPage({ setUser }) {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmitHandler}>
+    <div >
+      <form className="reg-form" onSubmit={onSubmitHandler}>
       <label>
-          Name
+          <p>Имя</p>
           <input
             type="text"
             value={name}
@@ -44,7 +44,8 @@ function RegPage({ setUser }) {
           ></input>
            </label>
         <label>
-          Email
+          <p>Email</p>
+          
           <input
             type="text"
             value={email}
@@ -52,7 +53,8 @@ function RegPage({ setUser }) {
           ></input>
         </label>
         <label>
-          Pass
+          <p>Пароль</p>
+          
           <input
             type="password"
             value={password}
@@ -60,14 +62,15 @@ function RegPage({ setUser }) {
           ></input>
         </label>
         <label>
-          Repeat password
+          <p>Повторите пароль</p>
+          
           <input
             type="password"
             value={rpassword}
             onChange={(e) => setRpassword(e.target.value)}
           ></input>
         </label>
-        <button type="submit">Зарегаться!!!!!</button>
+        <button type="submit">Зарегистрироваться</button>
       </form>
       {showError && (
         <div style={{ border: "1px solid red" }}>{errorMessage}</div>
